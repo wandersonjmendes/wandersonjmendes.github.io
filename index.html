@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+
+    <!-- Estilos adicionais para as habilidades -->
+  <style>
+    .skills-bar {
+      margin-bottom: 10px;
+    }
+    .skill {
+      margin-bottom: 5px;
+    }
+    .skill-name {
+      font-weight: bold;
+    }
+    .skill-bar {
+      background-color: #ddd;
+      height: 20px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+    .skill-level {
+      height: 100%;
+      border-radius: 10px;
+      background-color: #4caf50;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Portfólio</h1>
+    <nav> 
+      <a href="#home">Home</a>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h2>Bem-vindo ao Meu Portfólio!</h2>
+      <p>Veja mais sobre mim, meus projetos e entre em contato.</p>
+    </section>
+    <hr class="separator">
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <!-- Wrapper para foto e texto -->
+        <div class="content-wrapper">
+          <div class="photo-wrapper">
+            <img src="minhafoto.jpg" alt="Minha foto">
+          </div>
+          <div class="text-wrapper">
+            <!-- Parágrafos adicionais -->
+            <p>Me chamo Wanderson Jesus Mendes e sou um entusiasta da tecnologia. Com 21 anos de idade, estou atualmente cursando Análise e Desenvolvimento de Sistemas na Uninter. Desde jovem, desenvolvi uma paixão por resolver problemas e criar soluções inovadoras através da programação. Minha jornada na área de tecnologia começou quando eu tinha apenas 15 anos, e desde então tenho continuado a expandir meus conhecimentos e habilidades.</p>
+            <p>Sou apaixonado por front-end e um pouco de back-end dev também, gosto muito de usar essas linguagem de desenvolvimento: HTML, CSS, JavaScript, Python e espero aprender muito mais.</p>
+            <div class="skills">
+              <h3>Habilidades</h3>
+              <div class="skills-bar">
+                <!-- Barra de habilidades -->
+                <div class="skill">
+                  <span class="skill-name">HTML:</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;"></div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <span class="skill-name">CSS:</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;"></div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <span class="skill-name">JavaScript:</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 50%;"></div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <span class="skill-name">Python:</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <hr class="separator">
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <ul>
+        <li>
+          <a href="#">Projeto 1 - Estou desenvolvendo ainda...</a>
+        </li>
+      </ul>
+    </section>
+    <hr class="separator">
+    <section id="contato">
+        <!-- Formulário de contato -->
+        <h2>Contato</h2>
+        <form action="#" class="contact-form">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem"></textarea>
+          </div>
+          <input type="submit" value="Enviar" class="submit-btn">
+        </form>
+      </section>   
+  </main>
+  <footer>
+    <p>&copy; 2024 Meu Portfólio</p>
+  </footer>
+
+    <!-- script -->
+  <script>
+    window.addEventListener('load', function() {
+      updateSkillBars();
+    });
+
+    function updateSkillBars() {
+      var skillBars = document.querySelectorAll('.skill-bar');
+
+      skillBars.forEach(function(bar) {
+        var level = bar.querySelector('.skill-level').style.width;
+        var percent = parseInt(level, 10);
+        bar.setAttribute('aria-valuenow', percent);
+        bar.setAttribute('aria-valuetext', percent + '%');
+      });
+    }
+  </script>
+</body>
+</html>
